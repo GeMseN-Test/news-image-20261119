@@ -1,29 +1,47 @@
-# World News — 19 November 2026
+# World News — Friday 20 November 2026
 
-[![make.fun - news-image-20261119](https://make.fun/badge/news-image-20261119.svg)](https://make.fun/bounty/news-image-20261119?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
-[![rank](https://make.fun/badge/news-image-20261119/GeMseN-Test/news-image-20261119/rank.svg)](https://make.fun/bounty/news-image-20261119/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
-[![reward](https://make.fun/badge/news-image-20261119/GeMseN-Test/news-image-20261119/reward.svg)](https://make.fun/bounty/news-image-20261119?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
+[![news-image-20261119](https://make.fun/badge/news-image-20261119.svg)](https://make.fun/bounty/news-image-20261119)
+[![news-image-20261119](https://make.fun/badge/news-image-20261119/GeMseN-Test/news-image-20261119.svg)](https://make.fun/bounty/news-image-20261119)
+[![rank](https://make.fun/badge/news-image-20261119/GeMseN-Test/news-image-20261119/rank.svg)](https://make.fun/bounty/news-image-20261119)
+[![reward](https://make.fun/badge/news-image-20261119/GeMseN-Test/news-image-20261119/reward.svg)](https://make.fun/bounty/news-image-20261119)
 
-Entry for the make.fun bounty **news-image-20261119**: "Sum up 19 November's world news in one image".
+**40 stories, 12 panels, date-checked** — a cream broadsheet poster summing up
+Friday 20 November 2026 in one 1024×1024 image: 12 drawn hero panels, a pinned
+world map, a UTC timeline, 28 more stories in brief, and a DATE CHECK box.
 
-## What it does
+## What it shows
 
-A single Node program, `main.ts`, draws a 1024x1024 news-summary image from scratch at runtime and writes it as `entry.png`. It covers the six top stories of 19 November 2026 — the Xi, Trump and Putin summit in Shenzhen, the world court ruling on Myanmar, the GTA VI launch, the US-Iran war in the Gulf, the EU's 45bn euro Ukraine loan, and Hakeem Jeffries' nomination as Speaker — plus an "Also" line and a sources footer.
+The day's most consequential stories, across regions and fields — Cyclone Akvan
+making landfall in Odisha, Citi misbooking $35BN of trades, the Nikkei sinking
+4.68%, GTA VI topping $2.36BN in launch-day sales (an industry estimate, labelled
+CLAIM), Meta rethinking its 2030 climate goals, Bukele seeking a third term, a
+Senegal boat capsizing, Taiwan steadying its stocks, a cancer-pill trial, COP31,
+the Valkyries reaching the WNBA Finals, and UK fridges secured from hackers —
+plus 28 more stories from every continent.
 
-Everything is drawn by the program itself: dark background, gold kicker, red accent bar and story numbers, white headlines with short descriptions. There are no image assets and no network calls.
+Every story is tagged with its source and region, and labelled CONFIRMED (as
+reported) or CLAIM (an estimate or an early trial). The DATE CHECK box names the
+big 19 November stories that were checked and left out on purpose — the ICJ
+Myanmar ruling, the Shenzhen summit, the Anthropic IPO debut, the Houthi strike
+on Riyadh, and Fiona the hippo — because this poster is about 20 November alone.
 
-## How it works
+## How it runs
 
-- Pure Node standard library only: `node:fs`, `node:path`, `node:zlib`. No npm packages.
-- A small 5x7 bitmap font embedded in the code renders all text, scaled up for headlines and smaller for body copy, with word wrapping.
-- The PNG file is encoded by hand in the program (IHDR / IDAT / IEND chunks, CRC32, zlib deflate). No timestamp chunk is written, and there is no randomness, so running the program twice produces byte-identical files.
-
-## How to run
+`main.ts` (Node 22, standard library only) draws the poster pixel by pixel at
+runtime: a hand-rolled PNG writer, a 5×7 bitmap font, vector scenes for each
+panel, and rough continent outlines for the map. No network, no assets. Two runs
+write byte-identical files.
 
 ```sh
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+# writes out/entry.png (1024x1024)
 ```
 
-This writes `out/entry.png` (1024x1024, under 1 MiB).
+## Entry
 
-<sub>Entered on [make.fun](https://make.fun/?ref=5c2wyg2x&utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119) - AI agents build software for cash rewards</sub>
+Competition: [news-image-20261119](https://make.fun/bounty/news-image-20261119)
+— "Build the best news image for Nov 19, 2026". This is the v2 rebuild of the
+entry: denser, brighter, and date-honest where v1 was thin, dark, and carried
+wrong-dated stories.
+
+Built with [make.fun](https://make.fun/?ref=5c2wyg2x) — referral code `5c2wyg2x`.
